@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard';
 import './MyOrders.css'; 
 
 const MyOrders = () => {
-  const { cart, removeFromCart } = useCart(); // Obtenemos los productos en el carrito
+  const { cart, removeFromCart, addToCart } = useCart(); 
 
   const handleCheckout = () => {
     alert('Proceso de compra iniciado');
@@ -18,23 +18,24 @@ const MyOrders = () => {
       ) : (
         <>
           <div className="row">
-            {/* Mostramos cada producto en el carrito con la cantidad */}
+            {/* Mostramos cada producto en el pedido con la cantidad */}
             {cart.map((order) => (
               <div key={order.id} className="col-12 col-md-4 mb-4">
                 <ProductCard
+                  id={order.id} 
                   name={order.name}
                   description={order.desc}
                   price={order.price}
                   image={order.img}
-                  onAddToCart={() => {}} // Si necesitas agregarlo nuevamente al carrito
-                  showRemoveButton={true} // Mostrar el botón de eliminar en MyOrders
+                  onAddToCart={() => addToCart(order)}
+                  showRemoveButton={true}
                 />
                 {/* Mostramos la cantidad de productos */}
                 <div className="d-flex justify-content-between mt-2">
                   <span>Cantidad: {order.quantity}</span>
                   <button
                     className="btn btn-danger"
-                    onClick={() => removeFromCart(order.id)} // Eliminar producto del carrito
+                    onClick={() => removeFromCart(order.id)}
                   >
                     Eliminar
                   </button>
@@ -43,7 +44,7 @@ const MyOrders = () => {
             ))}
           </div>
 
-          {/* El botón "Proceder con la compra" solo aparecerá una vez, debajo de los productos */}
+          {/* El boton "Proceder con la compra" aparece abajo de los productos */}
           <div className="d-flex justify-content-center mt-4">
             <button className="btn btn-success" onClick={handleCheckout}>
               Proceder con la compra

@@ -18,7 +18,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('/api/register', { email, password });
+      const response = await axios.post('/api/register', { email, password });//continuar cuando empecemos el backend
       navigate('/login');
     } catch (error) {
       console.error('Error al registrar', error);

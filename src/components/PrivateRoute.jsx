@@ -10,7 +10,7 @@ const PrivateRoute = ({ element, roleRequired }) => {
     return <Navigate to="/login" />;
   }
 
-  // Si el usuario no tiene el rol adecuado, redirigir a home o página predeterminada
+  // Si el usuario no tiene el rol adecuado se redirige a home
   if (roleRequired && user.role !== roleRequired) {
     return <Navigate to="/" />;
   }

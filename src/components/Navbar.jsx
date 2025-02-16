@@ -9,11 +9,10 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body">
       <div className="container-fluid">
-        <Link className="navbar-brand text-white" to="/">Lentes AP</Link>
+        <Link className="navbar-brand text-white" to="/">Lentes AP!</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        {/* Contenido del Navbar */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -30,7 +29,7 @@ const Navbar = () => {
                 </li>
               </>
             ) : (
-              // Si el usuario est logueado, mostramos los enlaces correspondientes
+              // Si el usuario esta logueado, mostramos los enlaces correspondientes
               <>
                 {/* Si el usuario es un cliente mostramos el perfil de cliente */}
                 {user.role === 'client' && (
@@ -46,7 +45,7 @@ const Navbar = () => {
                   </li>
                 )}
 
-                {/* Botón para hacer logout que aparece cuando el usuario esta logeado*/}
+                {/* Boton para hacer logout que aparece cuando el usuario esta logeado*/}
                 <li className="nav-item">
                   <button className="btn btn-link text-white" onClick={logout}>Logout</button>
                 </li>
@@ -54,9 +53,9 @@ const Navbar = () => {
             )}
           </ul>
 
-          {/* Aquí, moveremos el botón Mis Pedidos (este lo ve el cliente) o Mis Ventas (este lo ve el admin) a la derecha */}
+          {/*el botón Mis Pedidos (este lo ve el cliente) o Mis Ventas (este lo ve el admin) a la derecha */}
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            {/* Si el usuario está logueado, mostramos Mis Pedidos o Mis Ventas a la derecha */}
+            {/* Si el usuario esta logueado, mostramos Mis Pedidos o Mis Ventas a la derecha */}
             {user && (
               <li className="nav-item">
                 {user.role === 'admin' ? (

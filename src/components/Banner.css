@@ -1,16 +1,14 @@
-/* src/components/Banner.css */
-
 .banner-container {
-  margin-top: 0; /* Eliminar cualquier margen superior para que quede pegado al navbar */
-  margin-bottom: 10px; /* Márgenes inferiores para separar ligeramente de los siguientes elementos */
-  overflow: hidden; /* Asegura que la imagen no se desborde del contenedor */
+  margin-top: 0;
+  margin-bottom: 10px;
+  overflow: hidden; 
 }
 
 .banner-container img {
-  width: 100%; /* Que ocupe todo el ancho disponible */
-  height: auto; /* Mantener la relación de aspecto correcta */
-  border-radius: 0px; /* Esquinas redondeadas */
-  object-fit: cover; /* Hace que la imagen ocupe el área del contenedor sin distorsionarse */
-  max-height: 200px; /* Limita la altura máxima del banner para que no quede demasiado alargado */
+  width: 100%; 
+  height: auto;
+  border-radius: 0px;
+  object-fit: cover; 
+  max-height: 200px;
 }
 
