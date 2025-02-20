@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import mockData from '../mockData'; // cree un archivo mockData donde estan las credenciales
+import mockData from '../mockdata.js'; // cree un archivo mockData donde estan las credenciales
 
 const AuthContext = createContext();
 
